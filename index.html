@@ -8,62 +8,94 @@ body {
   margin:0; font-family: 'Comic Sans MS', cursive;
   background: #ffe6f0; display:flex;
   align-items:center; justify-content:center; height:100vh;
+  overflow:hidden;
 }
 .card {
-  background:white; padding:30px; border-radius:20px;
-  text-align:center; width:90%; max-width:350px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  background:white; padding:30px; border-radius:25px;
+  text-align:center; width:90%; max-width:360px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  position:relative;
+  overflow:hidden;
 }
-img { width:180px; border-radius:12px; }
-h1 { font-size:22px; }
+img { width:180px; border-radius:15px; margin-bottom:10px; }
+h1 { font-size:22px; margin:15px 0; }
 button {
-  padding:10px 20px; margin:10px; border:none;
-  border-radius:20px; font-size:16px; cursor:pointer;
-  background:#ff66a3; color:white;
+  padding:12px 24px; margin:10px; border:none;
+  border-radius:25px; font-size:16px; cursor:pointer;
+  background:#ff66a3; color:white; box-shadow:0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
 }
+button:hover { transform: scale(1.1); }
 button.no { background:#aaa; }
+
+/* floating emoji stickers */
+.emoji {
+  position:absolute; font-size:28px;
+  animation: float 5s infinite linear;
+  pointer-events:none;
+}
+@keyframes float {
+  0% { transform: translateY(0px) translateX(0px); opacity:1; }
+  50% { transform: translateY(-120px) translateX(25px); opacity:0.8; }
+  100% { transform: translateY(-240px) translateX(-25px); opacity:0; }
+}
 </style>
 </head>
 <body>
 
+<!-- Slide 1 -->
 <div class="card" id="slide1">
   <img src="https://media.tenor.com/3aX4z8KkTzQAAAAC/cute-cat.gif">
   <h1>Chal chikne photo bhej 😤</h1>
   <button onclick="final()">Yes</button>
   <button class="no" onclick="slide2()">No</button>
+  <!-- floating emojis -->
+  <div class="emoji" style="left:20px;">🐱</div>
+  <div class="emoji" style="left:80px;">💖</div>
+  <div class="emoji" style="left:150px;">🐱</div>
+  <div class="emoji" style="left:200px;">💖</div>
 </div>
 
+<!-- Slide 2 -->
 <div class="card" id="slide2" style="display:none;">
   <img src="https://media.tenor.com/9Z1z2B8WkZsAAAAC/cat-please.gif">
   <h1>Plssss na 🥺</h1>
   <button onclick="final()">Yes</button>
   <button class="no" onclick="slide3()">No</button>
+  <!-- floating emojis -->
+  <div class="emoji" style="left:10px;">💖</div>
+  <div class="emoji" style="left:60px;">🐱</div>
+  <div class="emoji" style="left:140px;">💖</div>
+  <div class="emoji" style="left:220px;">🐱</div>
 </div>
 
+<!-- Slide 3 -->
 <div class="card" id="slide3" style="display:none;">
   <img src="https://media.tenor.com/7qDkU6P6z7UAAAAC/angry-cat.gif">
   <h1>Bhej re ho 😒</h1>
   <button onclick="final()">Yes</button>
+  <!-- floating emojis -->
+  <div class="emoji" style="left:20px;">🐱</div>
+  <div class="emoji" style="left:90px;">💖</div>
+  <div class="emoji" style="left:160px;">🐱</div>
+  <div class="emoji" style="left:250px;">💖</div>
 </div>
 
+<!-- Final Slide -->
 <div class="card" id="final" style="display:none;">
   <img src="https://media.tenor.com/ZtZ1t1bY7uQAAAAC/cute-cat-heart.gif">
   <h1>Thank youuu 🫶💗</h1>
+  <!-- floating emojis -->
+  <div class="emoji" style="left:30px;">🐱</div>
+  <div class="emoji" style="left:90px;">💖</div>
+  <div class="emoji" style="left:150px;">🐱</div>
+  <div class="emoji" style="left:220px;">💖</div>
 </div>
 
 <script>
-function slide2() {
-  hideAll();
-  document.getElementById("slide2").style.display = "block";
-}
-function slide3() {
-  hideAll();
-  document.getElementById("slide3").style.display = "block";
-}
-function final() {
-  hideAll();
-  document.getElementById("final").style.display = "block";
-}
+function slide2() { hideAll(); document.getElementById("slide2").style.display = "block"; }
+function slide3() { hideAll(); document.getElementById("slide3").style.display = "block"; }
+function final() { hideAll(); document.getElementById("final").style.display = "block"; }
 function hideAll() {
   document.getElementById("slide1").style.display="none";
   document.getElementById("slide2").style.display="none";
