@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>For You 😼</title>
+<title>Super Cute Stickers</title>
 <style>
 body {
   margin:0; font-family: 'Comic Sans MS', cursive;
@@ -14,10 +14,9 @@ body {
   background:white; padding:30px; border-radius:25px;
   text-align:center; width:90%; max-width:360px;
   box-shadow:0 10px 30px rgba(0,0,0,0.3);
-  position:relative;
-  overflow:hidden;
+  position:relative; overflow:hidden;
 }
-img { width:180px; border-radius:15px; margin-bottom:10px; }
+img.main { width:180px; border-radius:15px; margin-bottom:10px; }
 h1 { font-size:22px; margin:15px 0; }
 button {
   padding:12px 24px; margin:10px; border:none;
@@ -28,16 +27,17 @@ button {
 button:hover { transform: scale(1.1); }
 button.no { background:#aaa; }
 
-/* floating emoji stickers */
-.emoji {
-  position:absolute; font-size:28px;
-  animation: float 5s infinite linear;
+/* floating stickers */
+.sticker {
+  position:absolute; width:40px;
+  animation: float linear infinite;
   pointer-events:none;
 }
+
 @keyframes float {
   0% { transform: translateY(0px) translateX(0px); opacity:1; }
-  50% { transform: translateY(-120px) translateX(25px); opacity:0.8; }
-  100% { transform: translateY(-240px) translateX(-25px); opacity:0; }
+  50% { transform: translateY(-120px) translateX(30px); opacity:0.8; }
+  100% { transform: translateY(-240px) translateX(-30px); opacity:0; }
 }
 </style>
 </head>
@@ -45,51 +45,47 @@ button.no { background:#aaa; }
 
 <!-- Slide 1 -->
 <div class="card" id="slide1">
-  <img src="https://media.tenor.com/3aX4z8KkTzQAAAAC/cute-cat.gif">
+  <img class="main" src="https://media.tenor.com/3aX4z8KkTzQAAAAC/cute-cat.gif">
   <h1>Chal chikne photo bhej 😤</h1>
   <button onclick="final()">Yes</button>
   <button class="no" onclick="slide2()">No</button>
-  <!-- floating emojis -->
-  <div class="emoji" style="left:20px;">🐱</div>
-  <div class="emoji" style="left:80px;">💖</div>
-  <div class="emoji" style="left:150px;">🐱</div>
-  <div class="emoji" style="left:200px;">💖</div>
+  <img class="sticker" src="https://i.imgur.com/4AiXzf8.png" style="left:10px; animation-duration:4s;">
+  <img class="sticker" src="https://i.imgur.com/4AiXzf8.png" style="left:100px; animation-duration:5s;">
+  <img class="sticker" src="https://i.imgur.com/OjTZcYp.png" style="left:200px; animation-duration:6s;">
+  <img class="sticker" src="https://i.imgur.com/OjTZcYp.png" style="left:250px; animation-duration:4.5s;">
 </div>
 
 <!-- Slide 2 -->
 <div class="card" id="slide2" style="display:none;">
-  <img src="https://media.tenor.com/9Z1z2B8WkZsAAAAC/cat-please.gif">
+  <img class="main" src="https://media.tenor.com/9Z1z2B8WkZsAAAAC/cat-please.gif">
   <h1>Plssss na 🥺</h1>
   <button onclick="final()">Yes</button>
   <button class="no" onclick="slide3()">No</button>
-  <!-- floating emojis -->
-  <div class="emoji" style="left:10px;">💖</div>
-  <div class="emoji" style="left:60px;">🐱</div>
-  <div class="emoji" style="left:140px;">💖</div>
-  <div class="emoji" style="left:220px;">🐱</div>
+  <img class="sticker" src="https://i.imgur.com/4AiXzf8.png" style="left:20px; animation-duration:4.5s;">
+  <img class="sticker" src="https://i.imgur.com/OjTZcYp.png" style="left:100px; animation-duration:5.5s;">
+  <img class="sticker" src="https://i.imgur.com/4AiXzf8.png" style="left:180px; animation-duration:6s;">
+  <img class="sticker" src="https://i.imgur.com/OjTZcYp.png" style="left:250px; animation-duration:4.2s;">
 </div>
 
 <!-- Slide 3 -->
 <div class="card" id="slide3" style="display:none;">
-  <img src="https://media.tenor.com/7qDkU6P6z7UAAAAC/angry-cat.gif">
+  <img class="main" src="https://media.tenor.com/7qDkU6P6z7UAAAAC/angry-cat.gif">
   <h1>Bhej re ho 😒</h1>
   <button onclick="final()">Yes</button>
-  <!-- floating emojis -->
-  <div class="emoji" style="left:20px;">🐱</div>
-  <div class="emoji" style="left:90px;">💖</div>
-  <div class="emoji" style="left:160px;">🐱</div>
-  <div class="emoji" style="left:250px;">💖</div>
+  <img class="sticker" src="https://i.imgur.com/4AiXzf8.png" style="left:10px; animation-duration:5s;">
+  <img class="sticker" src="https://i.imgur.com/OjTZcYp.png" style="left:80px; animation-duration:4.5s;">
+  <img class="sticker" src="https://i.imgur.com/4AiXzf8.png" style="left:160px; animation-duration:6s;">
+  <img class="sticker" src="https://i.imgur.com/OjTZcYp.png" style="left:240px; animation-duration:5.5s;">
 </div>
 
 <!-- Final Slide -->
 <div class="card" id="final" style="display:none;">
-  <img src="https://media.tenor.com/ZtZ1t1bY7uQAAAAC/cute-cat-heart.gif">
+  <img class="main" src="https://media.tenor.com/ZtZ1t1bY7uQAAAAC/cute-cat-heart.gif">
   <h1>Thank youuu 🫶💗</h1>
-  <!-- floating emojis -->
-  <div class="emoji" style="left:30px;">🐱</div>
-  <div class="emoji" style="left:90px;">💖</div>
-  <div class="emoji" style="left:150px;">🐱</div>
-  <div class="emoji" style="left:220px;">💖</div>
+  <img class="sticker" src="https://i.imgur.com/4AiXzf8.png" style="left:10px; animation-duration:4s;">
+  <img class="sticker" src="https://i.imgur.com/OjTZcYp.png" style="left:80px; animation-duration:5s;">
+  <img class="sticker" src="https://i.imgur.com/4AiXzf8.png" style="left:160px; animation-duration:6s;">
+  <img class="sticker" src="https://i.imgur.com/OjTZcYp.png" style="left:240px; animation-duration:4.5s;">
 </div>
 
 <script>
