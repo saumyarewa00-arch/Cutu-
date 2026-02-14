@@ -1,124 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>POV</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #f6f7fb;
-      font-family: Arial, sans-serif;
-    }
-    .card {
-      background: #fff;
-      width: 320px;
-      padding: 20px;
-      border-radius: 16px;
-      text-align: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
-    .grid {
-      background: repeating-linear-gradient(
-        0deg,
-        #eee,
-        #eee 1px,
-        transparent 1px,
-        transparent 30px
-      ),
-      repeating-linear-gradient(
-        90deg,
-        #eee,
-        #eee 1px,
-        transparent 1px,
-        transparent 30px
-      );
-      border-radius: 12px;
-      padding: 20px;
-      min-height: 260px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 12px;
-    }
-    img {
-      width: 120px;
-      height: auto;
-    }
-    .text {
-      font-size: 18px;
-      font-weight: 600;
-      color: #7a2cff;
-      margin-bottom: 10px;
-    }
-    .buttons {
-      display: flex;
-      gap: 10px;
-    }
-    button {
-      padding: 10px 18px;
-      border: none;
-      border-radius: 999px;
-      background: #7a2cff;
-      color: white;
-      font-size: 14px;
-      cursor: pointer;
-    }
-    button.secondary {
-      background: #b48cff;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>For You 😼</title>
+<style>
+body {
+  margin:0; font-family: 'Comic Sans MS', cursive;
+  background: #ffe6f0; display:flex;
+  align-items:center; justify-content:center; height:100vh;
+}
+.card {
+  background:white; padding:30px; border-radius:20px;
+  text-align:center; width:90%; max-width:350px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+img { width:180px; border-radius:12px; }
+h1 { font-size:22px; }
+button {
+  padding:10px 20px; margin:10px; border:none;
+  border-radius:20px; font-size:16px; cursor:pointer;
+  background:#ff66a3; color:white;
+}
+button.no { background:#aaa; }
+</style>
 </head>
 <body>
-  <div class="card">
-    <div class="grid">
-      <img id="sticker" src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="cat" />
-      <div class="text" id="text">Thanks zi 🐱✨</div>
-      <div class="buttons" id="buttons">
-        <button onclick="nextStep()">Ok</button>
-        <button class="secondary" onclick="nextStep()">Noi</button>
-      </div>
-    </div>
-  </div>
 
-  <script>
-    let step = 0;
+<div class="card" id="slide1">
+  <img src="https://media.tenor.com/3aX4z8KkTzQAAAAC/cute-cat.gif">
+  <h1>Chal chikne photo bhej 😤</h1>
+  <button onclick="final()">Yes</button>
+  <button class="no" onclick="slide2()">No</button>
+</div>
 
-    const scenes = [
-      {
-        text: "Thanks zi 🐱✨",
-        img: "https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif"
-      },
-      {
-        text: "Bhej rahe ho? 😳",
-        img: "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif"
-      },
-      {
-        text: "Pleamse cutie 🥺",
-        img: "https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif"
-      },
-      {
-        text: "Chal chikne, photo bhej 😈📸",
-        img: "https://media.giphy.com/media/13CoXDiaCcCoyk/giphy.gif"
-      }
-    ];
+<div class="card" id="slide2" style="display:none;">
+  <img src="https://media.tenor.com/9Z1z2B8WkZsAAAAC/cat-please.gif">
+  <h1>Plssss na 🥺</h1>
+  <button onclick="final()">Yes</button>
+  <button class="no" onclick="slide3()">No</button>
+</div>
 
-    function nextStep() {
-      step++;
-      if (step >= scenes.length) step = scenes.length - 1;
-      document.getElementById("text").innerText = scenes[step].text;
-      document.getElementById("sticker").src = scenes[step].img;
+<div class="card" id="slide3" style="display:none;">
+  <img src="https://media.tenor.com/7qDkU6P6z7UAAAAC/angry-cat.gif">
+  <h1>Bhej re ho 😒</h1>
+  <button onclick="final()">Yes</button>
+</div>
 
-      if (step === scenes.length - 1) {
-        document.getElementById("buttons").innerHTML =
-          '<button onclick="alert(`Photo bhejne ka time aa gaya 😌📸`)">Ok</button>';
-      }
-    }
-  </script>
+<div class="card" id="final" style="display:none;">
+  <img src="https://media.tenor.com/ZtZ1t1bY7uQAAAAC/cute-cat-heart.gif">
+  <h1>Thank youuu 🫶💗</h1>
+</div>
+
+<script>
+function slide2() {
+  hideAll();
+  document.getElementById("slide2").style.display = "block";
+}
+function slide3() {
+  hideAll();
+  document.getElementById("slide3").style.display = "block";
+}
+function final() {
+  hideAll();
+  document.getElementById("final").style.display = "block";
+}
+function hideAll() {
+  document.getElementById("slide1").style.display="none";
+  document.getElementById("slide2").style.display="none";
+  document.getElementById("slide3").style.display="none";
+  document.getElementById("final").style.display="none";
+}
+</script>
+
 </body>
 </html>
