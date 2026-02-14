@@ -12,11 +12,11 @@ body {
 }
 .card {
   background:white; padding:30px; border-radius:25px;
-  text-align:center; width:90%; max-width:360px;
+  text-align:center; width:90%; max-width:400px;
   box-shadow:0 10px 30px rgba(0,0,0,0.3);
   position:relative; overflow:hidden;
 }
-img.main { width:180px; border-radius:15px; margin-bottom:10px; }
+img.main { width:250px; border-radius:15px; margin-bottom:20px; }
 h1 { font-size:22px; margin:15px 0; }
 button {
   padding:12px 24px; margin:10px; border:none;
@@ -27,16 +27,16 @@ button {
 button:hover { transform: scale(1.1); }
 button.no { background:#aaa; }
 
-/* floating big stickers */
+/* floating hearts & sparkles */
 .sticker {
-  position:absolute; width:60px; /* size of sticker */
+  position:absolute; width:50px;
   animation: float linear infinite;
   pointer-events:none;
 }
 @keyframes float {
   0% { transform: translateY(0px) translateX(0px); opacity:1; }
-  50% { transform: translateY(-180px) translateX(30px); opacity:0.8; }
-  100% { transform: translateY(-360px) translateX(-30px); opacity:0; }
+  50% { transform: translateY(-200px) translateX(30px); opacity:0.8; }
+  100% { transform: translateY(-400px) translateX(-30px); opacity:0; }
 }
 </style>
 </head>
@@ -49,11 +49,9 @@ button.no { background:#aaa; }
   <button onclick="final()">Yes</button>
   <button class="no" onclick="slide2()">No</button>
 
-  <!-- big stickers + hearts + sparkles -->
-  <img class="sticker" src="https://www.pngkey.com/png/full/597-5976047_cat-sticker-cute-cat-pictures-for-instagram.png" style="left:10px; animation-duration:5s;">
-  <img class="sticker" src="https://www.pngkey.com/png/full/184-1841138_kawaii-heart-png-transparent-background-cute-heart.png" style="left:80px; animation-duration:4s;">
-  <img class="sticker" src="https://www.pngkey.com/png/full/184-1841138_kawaii-heart-png-transparent-background-cute-heart.png" style="left:200px; animation-duration:6s;">
-  <img class="sticker" src="https://www.pngkey.com/png/full/592-5923827_glitter-star-png-kawaii-star-png.png" style="left:150px; animation-duration:5.5s;">
+  <img class="sticker" src="https://www.pngkey.com/png/full/184-1841138_kawaii-heart-png-transparent-background-cute-heart.png" style="left:10px; animation-duration:5s;">
+  <img class="sticker" src="https://www.pngkey.com/png/full/592-5923827_glitter-star-png-kawaii-star-png.png" style="left:100px; animation-duration:4s;">
+  <img class="sticker" src="https://www.pngkey.com/png/full/184-1841138_kawaii-heart-png-transparent-background-cute-heart.png" style="left:250px; animation-duration:6s;">
 </div>
 
 <!-- Slide 2 -->
@@ -63,10 +61,8 @@ button.no { background:#aaa; }
   <button onclick="final()">Yes</button>
   <button class="no" onclick="slide3()">No</button>
 
-  <!-- stickers -->
-  <img class="sticker" src="https://www.pngkey.com/png/full/597-5976047_cat-sticker-cute-cat-pictures-for-instagram.png" style="left:20px; animation-duration:5s;">
-  <img class="sticker" src="https://www.pngkey.com/png/full/184-1841138_kawaii-heart-png-transparent-background-cute-heart.png" style="left:100px; animation-duration:6s;">
-  <img class="sticker" src="https://www.pngkey.com/png/full/592-5923827_glitter-star-png-kawaii-star-png.png" style="left:250px; animation-duration:4.5s;">
+  <img class="sticker" src="https://www.pngkey.com/png/full/184-1841138_kawaii-heart-png-transparent-background-cute-heart.png" style="left:30px; animation-duration:5s;">
+  <img class="sticker" src="https://www.pngkey.com/png/full/592-5923827_glitter-star-png-kawaii-star-png.png" style="left:150px; animation-duration:6s;">
 </div>
 
 <!-- Slide 3 -->
@@ -75,10 +71,8 @@ button.no { background:#aaa; }
   <h1>Bhej re ho 😒</h1>
   <button onclick="final()">Yes</button>
 
-  <!-- stickers -->
-  <img class="sticker" src="https://www.pngkey.com/png/full/597-5976047_cat-sticker-cute-cat-pictures-for-instagram.png" style="left:10px; animation-duration:5.5s;">
-  <img class="sticker" src="https://www.pngkey.com/png/full/184-1841138_kawaii-heart-png-transparent-background-cute-heart.png" style="left:120px; animation-duration:4.5s;">
-  <img class="sticker" src="https://www.pngkey.com/png/full/592-5923827_glitter-star-png-kawaii-star-png.png" style="left:220px; animation-duration:6s;">
+  <img class="sticker" src="https://www.pngkey.com/png/full/184-1841138_kawaii-heart-png-transparent-background-cute-heart.png" style="left:20px; animation-duration:5.5s;">
+  <img class="sticker" src="https://www.pngkey.com/png/full/592-5923827_glitter-star-png-kawaii-star-png.png" style="left:180px; animation-duration:4.5s;">
 </div>
 
 <!-- Final Slide -->
@@ -86,10 +80,8 @@ button.no { background:#aaa; }
   <img class="main" src="https://media.tenor.com/ZtZ1t1bY7uQAAAAC/cute-cat-heart.gif">
   <h1>Thank youuu 🫶💗</h1>
 
-  <!-- stickers -->
-  <img class="sticker" src="https://www.pngkey.com/png/full/597-5976047_cat-sticker-cute-cat-pictures-for-instagram.png" style="left:20px; animation-duration:5s;">
-  <img class="sticker" src="https://www.pngkey.com/png/full/184-1841138_kawaii-heart-png-transparent-background-cute-heart.png" style="left:100px; animation-duration:4.5s;">
-  <img class="sticker" src="https://www.pngkey.com/png/full/592-5923827_glitter-star-png-kawaii-star-png.png" style="left:180px; animation-duration:6s;">
+  <img class="sticker" src="https://www.pngkey.com/png/full/184-1841138_kawaii-heart-png-transparent-background-cute-heart.png" style="left:20px; animation-duration:5s;">
+  <img class="sticker" src="https://www.pngkey.com/png/full/592-5923827_glitter-star-png-kawaii-star-png.png" style="left:150px; animation-duration:4.5s;">
 </div>
 
 <script>
